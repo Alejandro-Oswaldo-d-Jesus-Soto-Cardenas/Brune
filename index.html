@@ -4,11 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Peruanidad Hoy - Grupo 1</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/loader.css') }}">
+
+    <style>
+        /* === ESTILO GENERAL === */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f1ea;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* === HEADER ESTILO PERUANO === */
+        header {
+            background: linear-gradient(to right, #b71c1c, #ffffff, #b71c1c);
+            color: #b71c1c;
+            text-align: center;
+            padding: 30px 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 900;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        header p {
+            margin: 5px 0 15px;
+            font-size: 1.1em;
+            color: #444;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #b71c1c;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 1em;
+            padding: 5px 10px;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #b71c1c;
+            color: white;
+        }
+
+        /* === SECCIONES === */
+        main {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 900;
+        }
+
+        .section {
+            background-color: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            transition: opacity 0.5s;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .section h2 {
+            color: #6d4c41;
+            border-bottom: 2px solid #d32f2f;
+            padding-bottom: 5px;
+            width: 100%;
+        }
+
+        .section-image {
+            max-width: 300px;
+            height: auto;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section p, .section ul {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .section ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .section ul li {
+            margin-bottom: 10px;
+        }
+
+        /* === RESPONSIVE DESIGN === */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            nav a {
+                margin: 0 8px;
+                font-size: 0.9em;
+            }
+
+            .section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .section-image {
+                max-width: 100%;
+                height: auto;
+            }
+
+            main {
+                padding: 0 10px;
+            }
+        }
+    </style>
 </head>
 <body>
-</div>
+
 <header>
   <div class="bandera">
     <div class="franja franja-roja"></div>
@@ -28,60 +157,70 @@
   </div>
 </header>
 
+<main>
+    <div class="section" id="introduccion">
+        <h2>Introducción</h2>
+        <img src="static/img/Peru 1.jpg" alt="Vista panorámica de Perú" class="section-image">
+        <p>Grupo 1 se adentra en la rica y compleja identidad peruana de 2025...</p>
+    </div>
 
-    <main>
-        <div class="section" id="introduccion">
-            <h2>Introducción</h2>
-            <img src="{{ url_for('static', filename='img/Peru 1.jpg') }}" alt="Vista panorámica de Perú" class="section-image">
-            <p>Grupo 1 se adentra en la rica y compleja identidad peruana de 2025, explorando no solo el Himno Nacional y las fechas patrias, sino también figuras históricas clave, tradiciones vivas y un análisis profundo de los desafíos y esperanzas que moldean la peruanidad contemporánea. Desde la lucha contra la desigualdad hasta el resurgir cultural con la gastronomía y el turismo, este proyecto busca reflejar la diversidad y resiliencia del pueblo peruano.</p>
-        </div>
+    <div class="section" id="integrantes">
+        <h2>Integrantes del Grupo 1</h2>
+        <ul>
+            <li>Pilar Magallanes</li>
+            <li>BruneLla Soto</li>
+            <li>Isabel Cerrón</li>
+            <li>Dahize Mánrique</li>
+            <li>Stefany Sanchéz</li>
+            <li>Danicza Villagaray</li>
+        </ul>
+    </div>
 
-        <div class="section" id="integrantes">
-            <h2>Integrantes del Grupo 1</h2>
-            <ul>
-                <li>Pilar Magallanes</li>
-                <li>BruneLla Soto</li>
-                <li>Isabel Cerrón</li>
-                <li>Dahize Mánrique</li>
-                <li>Stefany Sanchéz</li>
-                <li>Danicza Villagaray</li>
-            </ul>
-        </div>
+    <div class="section" id="himno">
+        <h2>El Himno y su Significado</h2>
+        <img src="static/img/Peru 2.jpg" alt="Interpretación del Himno Nacional" class="section-image">
+        <p>El Himno Nacional, "Somos libres, seámoslo siempre"... </p>
+    </div>
 
-        <div class="section" id="himno">
-            <h2>El Himno y su Significado</h2>
-            <img src="{{ url_for('static', filename='img/Peru 2.jpg') }}" alt="Interpretación del Himno Nacional" class="section-image">
-            <p>El Himno Nacional, "Somos libres, seámoslo siempre", escrito por José de la Torre Ugarte y musicado por José Bernardo Alcedo en 1821, es más que un símbolo de independencia. Sus versos evocan la memoria de la lucha contra el colonialismo español y resuenan hoy como un llamado a la unidad frente a desafíos modernos. En 2025, su interpretación en eventos culturales y escolares refuerza el orgullo nacional en un contexto de globalización.</p>
-        </div>
+    <div class="section" id="fechas">
+        <h2>Fechas Importantes y su Contexto</h2>
+        <img src="static/img/Peru 3.jpg" alt="Celebración de Fiestas Patrias" class="section-image">
+        <ul>
+            <li><strong>28 de Julio</strong>: Día de la Independencia...</li>
+            <li><strong>8 de Octubre</strong>: Combate de Angamos...</li>
+            <li><strong>1 de Agosto</strong>: Día de la Fraternidad...</li>
+        </ul>
+    </div>
 
-        <div class="section" id="fechas">
-            <h2>Fechas Importantes y su Contexto</h2>
-            <img src="{{ url_for('static', filename='img/Peru 3.jpg') }}" alt="Celebración de Fiestas Patrias" class="section-image">
-            <ul>
-                <li><strong>28 de Julio</strong>: Día de la Independencia, celebrado con desfiles, misas y ferias que mezclan lo tradicional (como el baile de tijeras) con lo moderno (tecnología en transmisiones en vivo).</li>
-                <li><strong>8 de Octubre</strong>: Combate de Angamos, un homenaje a la Marina que en 2025 incluye exposiciones sobre la historia naval y su relevancia en la defensa de recursos marinos.</li>
-                <li><strong>1 de Agosto</strong>: Día de la Fraternidad Peruano-Ecuatoriana, que en 2025 marca 25 años de paz, con festivales binacionales que promueven el intercambio cultural.</li>
-            </ul>
-        </div>
+    <div class="section" id="personas">
+        <h2>Personas que Han Marcado la Historia</h2>
+        <img src="static/img/Peru 4.jpg" alt="Retrato de José de San Martín" class="section-image">
+        <ul>
+            <li><strong>José de San Martín</strong>: El Libertador...</li>
+            <li><strong>Túpac Amaru II</strong>: Su rebelión...</li>
+            <li><strong>Mario Vargas Llosa</strong>: Nobel de Literatura...</li>
+            <li><strong>Yma Sumac</strong>: La cantante de los años 50...</li>
+        </ul>
+    </div>
 
-        <div class="section" id="personas">
-            <h2>Personas que Han Marcado la Historia</h2>
-            <img src="{{ url_for('static', filename='img/Peru 4.jpg') }}" alt="Retrato de José de San Martín" class="section-image">
-            <ul>
-                <li><strong>José de San Martín</strong>: El Libertador, cuya estrategia en 1821 liberó al Perú, sigue inspirando líderes sociales que abogan por la justicia en 2025.</li>
-                <li><strong>Túpac Amaru II</strong>: Su rebelión de 1780 contra la corona española es un símbolo de resistencia indígena, revivido en movimientos por los derechos de las comunidades andinas.</li>
-                <li><strong>Mario Vargas Llosa</strong>: Nobel de Literatura en 2010, su obra en 2025 sigue influyendo en debates sobre identidad y política, con nuevas ediciones de sus libros.</li>
-                <li><strong>Yma Sumac</strong>: La cantante de los años 50, cuyo legado polifónico resurge en 2025 con festivales que fusionan su estilo con música electrónica peruana.</li>
-            </ul>
-        </div>
+    <div class="section" id="peruanidad-hoy">
+        <h2>Cómo es la Peruanidad Hoy en Día</h2>
+        <img src="static/img/Peru 5.jpg" alt="Vista de Machu Picchu" class="section-image">
+        <p>La peruanidad es un tapiz vivo de tradiciones y modernidad...</p>
+    </div>
+</main>
 
-        <div class="section" id="peruanidad-hoy">
-            <h2>Cómo es la Peruanidad Hoy en Día</h2>
-            <img src="{{ url_for('static', filename='img/Peru 5.jpg') }}" alt="Vista de Machu Picchu" class="section-image">
-            <p>La peruanidad es un tapiz vivo de tradiciones y modernidad. La gastronomía, con chefs como Virgilio Martínez elevando el ceviche y la quinua a nivel mundial, es un pilar económico y cultural. Sin embargo, desafíos como el cambio climático amenazan la agricultura andina, mientras la desigualdad persiste en zonas rurales. Las esperanzas radican en el turismo (con Machu Picchu recibiendo 1.5 millones de visitantes anuales) y en iniciativas juveniles que usan tecnología para preservar lenguas indígenas como el quechua. La peruanidad hoy es resiliente, diversa y en constante evolución.</p>
-        </div>
-    </main>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const sections = document.querySelectorAll('.section');
+        sections.forEach((section, index) => {
+            setTimeout(() => {
+                section.style.opacity = '1';
+                section.style.transition = 'opacity 0.5s';
+            }, index * 500);
+        });
+    });
+</script>
 
-    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
